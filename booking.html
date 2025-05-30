@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Package Booking</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/book.css" />
+</head>
+<body>
+
+  <div class="container my-4" id="formContainer">
+    <h2 class="text-center mb-4">Choose a Package</h2>
+
+    <!-- Live Price Display -->
+    <div id="priceDisplay" class="alert alert-info text-center" style="display: none;"></div>
+
+    <!-- Booking Form -->
+    <form id="bookingForm">
+      <div id="packageCards" class="row g-3 mb-4">
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card package-card" data-package="Manali" data-price="₹5,999 - ₹7,999">
+            <img src="/images/manali.jpg" class="card-img-top" alt="Manali" />
+            <div class="card-body text-center">
+              <h5 class="card-title">Manali</h5>
+              <p class="card-text">₹5,999 - ₹7,999</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card package-card" data-package="Goa" data-price="₹7,999 - ₹10,000">
+            <img src="/images/Goa.jpg" class="card-img-top" alt="Goa" />
+            <div class="card-body text-center">
+              <h5 class="card-title">Goa</h5>
+              <p class="card-text">₹7,999 - ₹10,000</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card package-card" data-package="Delhi" data-price="₹2,999 - ₹7,999">
+            <img src="images/img-3.jpg" class="card-img-top" alt="Delhi" />
+            <div class="card-body text-center">
+              <h5 class="card-title">Delhi</h5>
+              <p class="card-text">₹2,999 - ₹7,999</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card package-card" data-package="Jaipur" data-price="₹11,999 - ₹12,999">
+            <img src="images/img-4.jpg" class="card-img-top" alt="Jaipur" />
+            <div class="card-body text-center">
+              <h5 class="card-title">Jaipur</h5>
+              <p class="card-text">₹11,999 - ₹12,999</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card package-card" data-package="Kerala" data-price="₹2,999 - ₹6,999">
+            <img src="/images/varkala.jpg" class="card-img-top" alt="Kerala" />
+            <div class="card-body text-center">
+              <h5 class="card-title">Varkala</h5>
+              <p class="card-text">₹2,999 - ₹6,999</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card package-card" data-package="Darjeeling" data-price="₹20,000 - ₹25,000">
+            <img src="images/img-6.jpg" class="card-img-top" alt="Darjeeling" />
+            <div class="card-body text-center">
+              <h5 class="card-title">Darjeeling</h5>
+              <p class="card-text">₹20,000 - ₹25,000</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hidden input to hold selected package -->
+      <input type="hidden" id="packageInput" name="package" required />
+
+      <div class="mb-3">
+        <label for="bookingType" class="form-label">Type of Booking:</label>
+        <select class="form-select" id="bookingType" required>
+          <option value="" disabled selected>Select Booking Type</option>
+          <option value="Solo">Solo</option>
+          <option value="Couple">Couple</option>
+          <option value="Family">Family</option>
+          <option value="Friends">Friends</option>
+        </select>
+      </div>
+
+      <div class="mb-3">
+        <label for="date" class="form-label">Select Date:</label>
+        <input type="date" class="form-control" id="date" required />
+      </div>
+
+      <button type="submit" class="btn btn-primary w-100">Book Now</button>
+    </form>
+
+    <!-- Dynamic Image Section -->
+    <div id="imageDisplay" class="mt-4" style="display: none;">
+      <img id="packageImage" src="" class="img-fluid rounded shadow-sm" alt="Selected Package Image" />
+    </div>
+  </div>
+
+  <!-- Toast Success Message -->
+  <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+    <div id="successToast" class="toast bg-success text-white" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="d-flex">
+        <div class="toast-body">Booking confirmed successfully!</div>
+        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Your custom JS -->
+  <script src="/js/book.js"></script>
+</body>
+</html>
